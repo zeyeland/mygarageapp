@@ -1,26 +1,38 @@
-var carStack = [];
+var stack1 = [];
+var stack2 = [];
+var stack3 = [];
 var tempStack = []
+var carNumber;
+var carModel;
+var theCar;
 
-function addCar(thisCar){
-    carStack.push(thisCar);
-    console.log(carStack);
+document.getElementById("addCar1").addEventListener("click", function(){
+     carNumber = document.getElementById("carNumber").value;
+     carModel = document.getElementById("carModel").value;
+     theCar = [carNumber, carModel];
+     pushCar(stack1,theCar);
+});
+
+document.getElementById("addCar2").addEventListener("click", function(){
+     carNumber = document.getElementById("carNumber").value;
+     carModel = document.getElementById("carModel").value;
+     theCar = [carNumber, carModel];
+     pushCar(stack2,theCar);
+});
+
+document.getElementById("addCar3").addEventListener("click", function(){
+     carNumber = document.getElementById("carNumber").value;
+     carModel = document.getElementById("carModel").value;
+     theCar = [carNumber, carModel];
+     pushCar(stack3,theCar);
+});
+
+function pushCar(stackNumber, thisCar){
+    stackNumber.push(thisCar);
+    console.log(stack1);
 }
 
-// search to remove car based on its plate number
-function removeCar(plateNumber){
-    var poppedCar = carStack.pop();
-
-    if(plateNumber == poppedCar.plateNumber){
-        alert("The " + poppedCar.model + " has been returned.");
-    }
-    if(plateNumber != poppedCar.plateNumber){
-        alert("Car license #" + poppedCar.plateNumber
-         + " " + poppedCar.model + " was removed. Searching for your car.");
-         tempStack.push(poppedCar);
-         console.log(tempStack);
-    }
+function popCar(){
 
 }
-
-
 
